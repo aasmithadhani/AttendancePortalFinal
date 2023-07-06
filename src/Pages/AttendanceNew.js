@@ -194,14 +194,14 @@ const Attendance = ({}) => {
     // }
 
     const isSelected = objectList.some(
-      (selectedObject) => selectedObject.student === values.id
+      (selectedObject) => selectedObject?.student === values?.id
     );
     console.log(isSelected, "isSelected val");
     console.log(objectList, "ObjectList before Filtering");
     if (isSelected) {
       // Object is already selected, so remove it from the selectedObjects array
       const updatedSelectedObjects = objectList.filter(
-        (selectedObject) => selectedObject.student !== values.id
+        (selectedObject) => selectedObject?.student !== values?.id
       );
       setObjectList(updatedSelectedObjects);
       console.log(updatedSelectedObjects, "objectList after filtering");
@@ -416,8 +416,8 @@ const Attendance = ({}) => {
         <Grid container>
           <Grid item xs={12} md={6} lg={6}>
             <Typography variant="h4" sx={{ fontWeight: "bold" }}>
-              {year} {BatchDataAttendance.department.toUpperCase()}{" "}
-              {BatchDataAttendance.name}
+              {year} {BatchDataAttendance?.department.toUpperCase()}{" "}
+              {BatchDataAttendance?.name}
             </Typography>
             <Typography
               variant="h6"
@@ -427,7 +427,7 @@ const Attendance = ({}) => {
                 mb: 2,
               }}
             >
-              {lecture.subject.name}
+              {lecture.subject?.name}
             </Typography>
 
             {MyDataNew1.length == 0 ? (

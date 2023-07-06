@@ -35,7 +35,7 @@ function BatchModal() {
 
   let MyDataNewTemp = 0;
 
-  if (MyDataNew.length == 0) {
+  if (MyDataNew?.length == 0) {
     MyDataNewTemp = JSON.parse(localStorage.getItem("MyDataNewLocal"));
   } else {
     MyDataNewTemp = MyDataNew;
@@ -49,7 +49,7 @@ function BatchModal() {
   // console.log(BatchData.id);
   // console.log(MyDataNew);
   const BatchDataTeacher = MyDataNewTemp.find(
-    (element) => element.id === BatchData.id
+    (element) => element?.id === BatchData?.id
   );
   // const BatchDataTeacher = BatchData;
 
@@ -88,7 +88,7 @@ function BatchModal() {
                     Class Teacher
                   </TableCell>
                   <TableCell align="right">
-                    {BatchDataTeacher.class_teacher}
+                    {BatchDataTeacher?.class_teacher}
                   </TableCell>
                 </TableRow>
 
@@ -100,7 +100,7 @@ function BatchModal() {
                     Department
                   </TableCell>
                   <TableCell align="right">
-                    {BatchDataTeacher.department}
+                    {BatchDataTeacher?.department}
                   </TableCell>
                 </TableRow>
 
@@ -111,7 +111,7 @@ function BatchModal() {
                   <TableCell component="th" scope="row">
                     Id
                   </TableCell>
-                  <TableCell align="right">{BatchDataTeacher.id}</TableCell>
+                  <TableCell align="right">{BatchDataTeacher?.id}</TableCell>
                 </TableRow>
 
                 <TableRow
@@ -121,7 +121,7 @@ function BatchModal() {
                   <TableCell component="th" scope="row">
                     Name
                   </TableCell>
-                  <TableCell align="right">{BatchDataTeacher.name}</TableCell>
+                  <TableCell align="right">{BatchDataTeacher?.name}</TableCell>
                 </TableRow>
 
                 <TableRow
@@ -132,7 +132,7 @@ function BatchModal() {
                     Number of students
                   </TableCell>
                   <TableCell align="right">
-                    {BatchDataTeacher.number_of_students}
+                    {BatchDataTeacher?.number_of_students}
                   </TableCell>
                 </TableRow>
 
@@ -144,7 +144,7 @@ function BatchModal() {
                     Semester
                   </TableCell>
                   <TableCell align="right">
-                    {BatchDataTeacher.semester}
+                    {BatchDataTeacher?.semester}
                   </TableCell>
                 </TableRow>
 
@@ -155,7 +155,7 @@ function BatchModal() {
                   <TableCell component="th" scope="row">
                     Year
                   </TableCell>
-                  <TableCell align="right">{BatchDataTeacher.year}</TableCell>
+                  <TableCell align="right">{BatchDataTeacher?.year}</TableCell>
                 </TableRow>
 
                 {/* ))} */}
