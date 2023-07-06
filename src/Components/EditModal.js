@@ -228,7 +228,7 @@ function EditModal() {
     let config = {
       method: "patch",
       maxBodyLength: Infinity,
-      url: `http://attendanceportal.pythonanywhere.com/attendance/lecture/${LectureId}`,
+      url: `https://attendanceportal.pythonanywhere.com/attendance/lecture/${LectureId}`,
       headers: {
         "Content-Type": "application/json",
       },
