@@ -173,7 +173,7 @@ const Dashboard = () => {
       batch: batch,
     };
     const url =
-      "http://attendanceportal.pythonanywhere.com/attendance/download-attendance-range/?";
+      "https://attendanceportal.pythonanywhere.com/attendance/download-attendance-range/?";
     setLoading(true);
     fetch(url, {
       method: "POST",
