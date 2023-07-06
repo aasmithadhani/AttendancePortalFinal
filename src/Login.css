@@ -1,0 +1,205 @@
+@media screen and (min-width: 701px){
+  .lrGrid{
+    display: flex;
+    justify-content: space-between;
+  }
+  .leftGrid{
+    display: flex;
+    align-items: center;
+  }
+  /* .rightGrid{
+    width: 60%;
+  } */
+  .logoImage{
+    width: 50%!important;
+  }
+  .Paper {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+
+  }
+  .SapIdTF{
+    width:98%!important;
+    border-radius: 10px!important;
+  }
+  .PasswordTF{
+    width:98%!important;
+    border-radius: 10px!important;
+  }
+  .LoginBtn{
+    width: 98% !important;
+    height: 3rem;
+  }
+  #ForgotPass{
+    cursor: pointer;
+  }
+  /*For ForgotPassword*/
+  .EmailTF{
+    width:98%!important;
+    border-radius: 10px!important;
+  }
+  .SubmitBtn{
+    width: 98% !important;
+    height: 3rem;
+  }
+  #BackToLogin{
+    color: #0056D2;
+    cursor: pointer;
+
+  }
+  .imgBox{
+    display: flex;
+    justify-content: center;
+
+  }
+  #welcome{
+    font-size: 2.5rem;
+    text-align: center;
+    }
+
+}
+
+@media screen and (max-width: 800px){
+#welcome {
+    font-size: 2.3rem;
+    text-align: center;
+}
+}
+
+@media screen and (max-width: 700px) {
+  
+    .innerPaper {
+      /* */
+      /* display: flex;
+      align-items: center;
+      justify-content: center; */
+      max-width: 93% !important;          /* make it !important*/
+      width: 36rem;
+    }
+    .rightGrid{
+      display: none !important;
+      /* flex-direction: column; */
+      background-color:red; 
+    }
+    .lrGrid{
+      /* remove display flex */
+      /* display: flex;      */
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      flex-direction: column;
+    }
+    .leftGrid{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px 30px !important;
+
+
+    }
+    .Paper{
+      width: 28rem !important;
+      border-radius: 20px !important;
+    }
+
+    .Box{
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #ForgotPass{
+      font-size: 20px ;
+    }
+    .logoImage{
+      width: 80% !important;
+    /* justify-content:center !important; */
+
+    }
+    .box{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 350px;
+    }
+    #welcome{
+      display: flex;
+      justify-content: center;
+      align-items:last baseline;
+    font-size: 2.5rem;
+    }
+    .imgBox{
+      display: flex;
+      justify-content: center;
+
+    }
+  }
+  @media screen and (max-width: 450px){
+    .SapIdTypo{
+      margin-left: 5%!important;
+    }
+    .SapIdTF{
+      width:100%!important;
+      border-radius: 10px!important;
+    }
+    .PasswordTypo{
+      margin-left: 5%!important;
+    }
+    .PasswordTF{
+      width:100%!important;
+      border-radius: 10px!important;
+    }
+    .LoginBtn{
+      width: 100% !important;
+      height: 3rem;
+    }
+    .Paper {
+      padding-left: 25px !important;
+      padding-right: 25px !important;
+      padding-top: 20px !important;
+      padding-bottom: 30px !important;
+      width: 284px !important;
+      border-radius: 5px !important;
+  }
+    .leftGrid{
+      padding: 0px !important;
+      display:flex;
+      justify-content:center;
+    }
+    .SignUp{
+      display: none ;
+    }
+    .logoImage{
+      width: 80%;
+    }
+    .OuterMostBox{
+      flex-direction: column;
+      /* border-radius: 20px; */
+    }
+    .FirstBox{
+      width: 100% !important;
+      height: 100% !important;
+      /* flex-basis: 80%; */
+      background-size: cover;
+      background-image: url(./images/library.PNG);
+      /* border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px; */
+
+    }
+    .SecondBox{
+      width: 100vw !important;
+      height:"40vh";
+      background-color: white !important;
+      display: none;
+      /* flex:"1" */
+    }
+
+    #ForgotPass{
+      font-size: 15px ;
+    }
+
+    
+  }
+  

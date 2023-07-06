@@ -1,0 +1,45 @@
+@media screen and (max-width: 600px){
+    #Box{
+        width:19rem ;
+        padding :1.8rem;
+        border-radius: 0.8rem;
+    }
+    #Lec{
+        /* background-color: brown; */
+        width: 9rem ;
+        margin-right: 0.4rem;
+    }
+    .Nlec{
+        font-size: 17px !important;
+    }
+    #Batch{
+        /* background-color: brown; */
+        width: 9rem ;
+        margin-left: 0.4rem;
+    }
+    .NBatch{
+        font-size: 17px !important;
+    }
+    .From{
+        width: 9rem !important;
+        /* height: 20px; */
+    }
+    .To{
+        width: 9rem !important;
+    }
+    #ToId{
+        width: 9rem;
+    }
+    .Freq{
+        width: 19rem !important;
+        /* color: brown; */
+        border: 1px solid black ;
+    }
+    #Create{
+        /* background-color: brown; */
+        width: 19rem;
+
+    }
+
+  
+  }

@@ -1,0 +1,23 @@
+@media screen and (max-width: 600px){
+    #Box{
+        width:22rem ;
+        padding :1.8rem;
+        border-radius: 0.8rem;
+    }
+
+    .SmlBtn{
+        /* background-color: brown; */
+        width: 9rem !important;
+        /* margin-left: 0.4rem !important; */
+    }
+
+    .BigBtn{
+        width: 18.5rem !important;
+
+    }
+    /* #Create{
+        width: 18.5rem;
+
+    } */
+  
+  }

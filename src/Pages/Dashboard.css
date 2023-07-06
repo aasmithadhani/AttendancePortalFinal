@@ -1,0 +1,19 @@
+
+@media screen and (max-width: 650px) {
+    .date
+    {
+        width: 90vw !important
+    }
+    
+    .batch
+    {
+        width: 90vw !important
+    }
+
+    .subject
+    {
+        width: 90vw !important
+    }
+
+}
+

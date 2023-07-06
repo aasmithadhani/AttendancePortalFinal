@@ -1,0 +1,93 @@
+/* .date
+{
+    color: rgba(0, 86, 210, 1);
+    font-family: 'Montserrat' !important;
+    font-size: large !important;
+    margin-bottom: 10px !important;
+
+} */
+.Card:hover{
+    cursor:pointer;
+}
+.button{
+    margin-right: 15px !important;
+    padding: 23px !important;
+    /* background-color: #0056D2 !important; */
+    /* background-color:blue !important */
+}
+
+#clickHere:hover{
+    cursor: pointer;
+}
+#AddBtn{
+        display: flex;
+        justify-content: center;
+
+}
+@media screen and (max-width: 900px){
+    .cardTeacher{
+        /* margin-left: 15px !important; */
+        margin-right: 15px !important;
+
+    }
+  
+  }
+  @media screen and (max-width: 400px){
+    .button{
+
+        width:117px !important;
+    }
+ 
+    } 
+    @media screen and (max-width: 475px){
+        .Detail{
+            flex-direction: column !important;
+        }
+        .Heading{
+            font-size: 25px !important;
+        }
+        #All{
+            /* display: none; */
+            width:80px !important;
+
+        }
+        .button{
+            margin-left: 0px !important;
+            width:95px;
+        }
+  
+  }
+  @media screen and (max-width: 600px){
+    .cardTeacher{
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+        /* padding: 0px !important; */
+
+    }
+    #ToggleButtonGroup{
+        justify-content: space-around;
+    }
+    #Togglebox{
+        justify-content: space-between;
+    }
+  
+  }
+  @media screen and (max-width: 700px){
+    #BtnBox{
+        flex-direction: column;
+    }
+    #AddBox{
+        margin-bottom: 30px;
+    }
+    #AddBtn{
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+
+    }
+    .button{
+        /* width:100px !important; */
+        margin-right: 5px;
+    }
+  
+  }

@@ -1,0 +1,126 @@
+.font {
+  /* font-family: 'Hanalei Fill', cursive;
+  font-family: 'Poppins', sans-serif; */
+  font-family: 'Roboto', sans-serif;
+  /* color: red; */
+  color: black;
+}
+.Btnfont{
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  /* color: black; */
+
+}
+
+#ModalUpperBox{
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 45px;
+  padding-bottom: 45px;
+  /* background-color: aqua; */
+  
+}
+
+/* if we need to later change dimensions for mobile users */
+@media only screen and (max-width: 505px) {
+  .Btnfont {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    }
+
+}
+
+
+.buttonAttendance {
+  background-color: #0056D2!important;
+  color: white !important;
+  width: 14rem !important;
+  padding-top: 0.8rem !important;
+  padding-bottom: 0.8rem !important;
+  /* height: 50%; */
+  border-radius:10px !important;
+}
+
+.add {
+  display: none;
+}
+
+.edit {
+  color: rgba(0, 86, 210, 1) !important;
+  border-color: #80808036 !important;
+  background-color: white !important;
+  width: 12 px !important;
+  border-radius: 8px !important;
+  height: 100%;
+  font-weight: bolder !important;
+  border-width: 2px !important;
+  /* box-shadow: 1px 1px 1px 1px rgb(188, 185, 185); */
+  padding: 2px;
+  /* margin: 5px; */
+}
+.delete {
+  color: rgba(0, 86, 210, 1) !important;
+  border-color: #80808036 !important;
+  background-color: white !important;
+  /* width:90% !important; */
+  width: 12 px !important;
+  border-radius: 8px !important;
+  height: 100%;
+  font-weight: bolder !important;
+  border-width: 2px !important;
+  
+  /* box-shadow: 1px 1px 1px 1px rgb(188, 185, 185); */
+}
+.MainBox{
+  margin-left: 50px !important;
+}
+
+@media only screen and (max-width: 1207px) {
+    .buttonAttendance {
+        margin-top: 20px !important;
+       margin-left: 25%;
+      }
+  }
+  @media only screen and (max-width: 505px) {
+    .MainBox {
+        padding-right: 25px!important;
+        /* padding-left: 25px !important;     */
+        margin-left: 30px !important;
+      }
+      /* edit{
+        margin-right: 5px !important;
+      } */
+  }
+
+  /* for BatchModal */
+
+  .BatchModalBox{
+    width: 25rem;
+    /* color: blue; */
+  }
+  /* @media only screen and (max-width: 505px) {
+
+    .BatchModalBox{
+      width: 25px;
+    }
+
+  } */
+  @media only screen and (max-width: 505px) {
+
+    .BatchModalBox{
+      width: 20rem ;
+    }
+
+  }
+
+  @media only screen and (max-width: 505px) {
+
+    .grid{
+      height: 6rem !important ;
+    }
+
+  }

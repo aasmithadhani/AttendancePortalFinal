@@ -1,0 +1,90 @@
+.header
+{
+    /* background-color: aquamarine; */
+    /* margin-left: 80%; */
+    /* align-items: end; */
+    /* flex-basis: 90%; */
+    /* float:"right"; */
+    /* left:42rem */
+    /* left:95% */
+    /* right: -70%; */
+}
+
+/* .upcoming
+{
+    background-color: blue;
+    border-radius: 20em;
+} */
+
+.button
+{
+   color: black !important;
+   font-weight: bold !important;
+   font-size: medium !important;
+   width: 8em !important;
+   height: 70%;
+   margin-left: 5px !important;
+   border-color: rgb(191, 189, 189) !important;
+   border-radius: 10px !important;
+
+   
+} 
+
+.css-d9c359-MuiButtonBase-root-MuiToggleButton-root.Mui-selected
+{
+    color: white !important;
+    background-color: blue !important;
+}
+.SearchBar{
+    width: 26rem !important
+}
+.Filter{
+    padding: 0px !important;
+    margin: 0px !important;
+}
+/* .SearchBar:hover{
+    width: 20rem !important;
+    border: 2px solid blue;
+    transition: 0.5s;
+} */
+
+#AddButton
+{
+    display: flex;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 750px) {
+    .SearchBar{
+        width: 20rem !important
+    }
+    .css-mnx3yd-MuiListItem-root {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+  }
+  @media only screen and (max-width:600px) {
+    .NavList{
+        margin-left: 5px !important;
+
+    }
+
+  }
+  @media only screen and (max-width:505px) {
+    .SearchBar{
+        width: 12rem !important
+    }
+
+ 
+  }
+
+  @media only screen and (max-width:425px) {
+    .css-mnx3yd-MuiListItem-root {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+    .css-1p823my-MuiListItem-root{
+        padding-left: 8px !important;
+    }
+  }
+

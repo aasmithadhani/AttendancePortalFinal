@@ -1,0 +1,60 @@
+.Name {
+    /* font-family: 'Hanalei Fill', cursive;
+    font-family: 'Poppins', sans-serif; */
+    font-family: 'Roboto', sans-serif;
+  }
+ 
+.Card:hover{
+    cursor:pointer;
+}
+.button{
+    margin-right: 15px !important;
+    /* background-color: #0056D2 !important; */
+    /* background-color:blue !important */
+}
+
+.CardContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+@media screen and (max-width: 900px){
+    .card{
+        /* margin-left: 15px !important; */
+        margin-right: 15px !important;
+
+    }
+  
+  }
+  @media screen and (max-width: 600px){
+    .card{
+        margin-left: 45px !important;
+        margin-right: 45px !important;
+
+        }
+ 
+    } 
+    @media screen and (max-width: 475px){
+        .Detail{
+            flex-direction: column !important;
+        }
+        .Heading{
+            font-size: 25px !important;
+        }
+  
+  }
+  @media screen and (max-width: 435px){
+    .card{
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+        /* padding: 0px !important; */
+    }
+  
+  }
+  @media screen and (max-width: 750px){
+    #CardHolder{
+        flex-direction: column;
+        
+    }
+  
+  }
