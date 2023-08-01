@@ -2,32 +2,31 @@ import React from "react";
 import Nav from "../Components/Nav";
 import { Box } from "@mui/system";
 import Toolbar from "@mui/material/Toolbar";
-import Button from "@mui/material/Button";
+// import Button from "@mui/material/Button";
 import "./Class.css";
 
-import { Typography } from "@mui/material";
+import { Skeleton,Typography } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import { useApp } from "../context/app-context";
-
 import Checkbox from "@mui/material/Checkbox";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-
 import axios from "axios";
-import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import CancelOutlinedIcon from "@mui/icons-material/CancelOutlined";
 import CancelIcon from "@mui/icons-material/Cancel";
 import Chart from "../Components/Chart";
 
 import { useState, useEffect } from "react";
 
 import swal from "sweetalert";
+import { red } from "@mui/material/colors";
+
+import AspectRatio from "@mui/joy/AspectRatio";
+import Card from "@mui/joy/Card";
+import CardContent from "@mui/joy/CardContent";
+import CardOverflow from "@mui/joy/CardOverflow";
+import Divider from "@mui/joy/Divider";
+// import Typography from "@mui/joy/Typography";
+import Button from "@mui/joy/Button";
 
 const drawerWidth = 120;
 const txtStyle = {
@@ -194,14 +193,14 @@ const Attendance = ({}) => {
     // }
 
     const isSelected = objectList.some(
-      (selectedObject) => selectedObject?.student === values?.id
+      (selectedObject) => selectedObject.student === values.id
     );
     console.log(isSelected, "isSelected val");
     console.log(objectList, "ObjectList before Filtering");
     if (isSelected) {
       // Object is already selected, so remove it from the selectedObjects array
       const updatedSelectedObjects = objectList.filter(
-        (selectedObject) => selectedObject?.student !== values?.id
+        (selectedObject) => selectedObject.student !== values.id
       );
       setObjectList(updatedSelectedObjects);
       console.log(updatedSelectedObjects, "objectList after filtering");
@@ -397,6 +396,31 @@ const Attendance = ({}) => {
     year = "BE";
   }
 
+  const generateSkeletonCards = (count) => {
+    const skeletonCards = [];
+    for (let i = 0; i < count; i++) {
+      skeletonCards.push(
+        <Card
+        variant="outlined"
+        sx={{ display: "flex", flexDirection: "row",mb:2}}
+        key={i}
+      >
+        <CardContent>
+          <Typography level="h2" fontSize="md">
+          <Skeleton animation="pulse" sx={{width:"40%"}}/>
+          </Typography>
+          <Typography level="body2" sx={{ mt: 0.5 }}>
+          <Skeleton animation="pulse"  sx={{width:"10%"}}/>
+          </Typography>
+        </CardContent>
+        <Skeleton animation="pulse" variant="circular" width={36} height={36}  sx={{mt:1}}/>
+      </Card>
+      );
+    }
+    return skeletonCards;
+  };
+  const numberOfSkeletonCards = 6;
+
   return (
     <Box sx={{ display: "flex" }}>
       <Nav />
@@ -416,8 +440,8 @@ const Attendance = ({}) => {
         <Grid container>
           <Grid item xs={12} md={6} lg={6}>
             <Typography variant="h4" sx={{ fontWeight: "bold" }}>
-              {year} {BatchDataAttendance?.department.toUpperCase()}{" "}
-              {BatchDataAttendance?.name}
+              {year} {BatchDataAttendance.department.toUpperCase()}{" "}
+              {BatchDataAttendance.name}
             </Typography>
             <Typography
               variant="h6"
@@ -427,55 +451,45 @@ const Attendance = ({}) => {
                 mb: 2,
               }}
             >
-              {lecture.subject?.name}
+              {lecture.subject.name}
             </Typography>
 
             {MyDataNew1.length == 0 ? (
-              <div>NO DATA</div>
+              // <div>NO DATA</div>
+              <>
+                {generateSkeletonCards(numberOfSkeletonCards)}
+              </>
             ) : (
               MyDataNew1?.map((values) => (
                 <>
-                  <Paper elevation={2}>
-                    <Grid
-                      container
-                      className="grid"
-                      sx={{ mb: 1, mt: 1, height: 80 }}
-                    >
-                      <Grid item xs={8} sx={{ ml: 1 }} lg={7} key={values.id}>
-                        <Typography variant="h5" sx={{ fontWeight: "bold" }}>
-                          {values.id}
-                          {/* {setStudentId(values.id)} */}
-                        </Typography>
-                        <Typography variant="h6">{values.name}</Typography>
-                      </Grid>
-                      <Grid item lg={2} xs={1} md={0}></Grid>
-                      <Grid item xs={2} lg={1.5}>
-                        <Checkbox
+                   <Card
+                  variant="outlined"
+                  sx={{ display: "flex", flexDirection: "row",mb:2}}
+                >
+                  <CardContent>
+                    <Typography level="h2" fontSize="md">
+                      {values.name}
+                    </Typography>
+                    <Typography level="body2" sx={{ mt: 0.5 }}>
+                      {values.id}
+                    </Typography>
+                  </CardContent>
+                  <Checkbox
                           {...label}
-                          icon={<CheckCircleOutlineIcon fontSize="large" />}
+                          icon={
+                            <CancelIcon
+                              fontSize="large"
+                              sx={{ color: red[500] }}
+                            />
+                          }
                           checkedIcon={<CheckCircleIcon fontSize="large" />}
                           defaultChecked={false}
                           onChange={() => {
                             handleChangeUV(values);
                           }}
-                          // onClick={() => {
-                          //   setStudentId(values.id);
-                          // }}
                           value={isTaken}
                         />
-                      </Grid>
-                      {/* <Grid item xs={2} lg={1}>
-                      <Checkbox
-                        {...label}
-                        icon={<CancelOutlinedIcon fontSize="large" />}
-                        checkedIcon={<CancelIcon fontSize="large" />}
-                        defaultChecked={false}
-                        onChange={handleChange2}
-                        value={isNotTaken}
-                      />
-                    </Grid> */}
-                    </Grid>
-                  </Paper>
+                </Card>
                 </>
               ))
             )}

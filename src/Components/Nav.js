@@ -278,7 +278,7 @@ const Nav = (props) => {
             <MenuIcon />
           </IconButton>
 
-          <Grid xs={12}>
+          <Grid item xs={12}>
             <Grid item>
               <List
                 sx={{

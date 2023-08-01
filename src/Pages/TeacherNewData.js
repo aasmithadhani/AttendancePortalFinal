@@ -8,7 +8,7 @@ import CardContent from "@mui/material/CardContent";
 import Toolbar from "@mui/material/Toolbar";
 import CardMedia from "@mui/material/CardMedia";
 import Paper from "@mui/material/Paper";
-import { Typography, Button, Modal } from "@mui/material";
+import { Typography, Button, Modal, Skeleton } from "@mui/material";
 import Box from "@mui/material/Box";
 // import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
 import CancelIcon from "@mui/icons-material/Cancel";
@@ -34,6 +34,7 @@ import { useApp } from "../context/app-context";
 import axios from "axios";
 
 import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
+import { Key } from "@mui/icons-material";
 
 const drawerWidth = 120;
 
@@ -109,6 +110,7 @@ const TeacherNewData = () => {
 
   // const [superSearch, setSuperSearch] = useState("");
   const [tokenSaved, settokenSaved] = useState("");
+  
 
   // here we have used stringify which converts it to string but we need a object
   // const token = JSON.stringify(localStorage.getItem("accessToken"));
@@ -282,6 +284,15 @@ const TeacherNewData = () => {
   //   setFilterData(newFilterB);
   // }, [search]);
 
+  // useEffect(() => {
+  //   const newFilterD = MyData.filter((filterData) => {
+  //     return search.toUpperCase() === ""
+  //       ? filterData
+  //       : filterData?.date?.includes(search.toUpperCase());
+  //   });
+  //   setFilterData(newFilterD);
+  // }, [search]);
+
   //reversing the array
   const reversed = [...filterData].reverse();
   // useEffect(() => {
@@ -290,6 +301,60 @@ const TeacherNewData = () => {
   // console.log(reversed1, "reversed new");
   //   };
   // }, [MyData]);
+  const generateSkeletonCards = (count) => {
+    if (!Array.isArray(filterData)) {
+      return null;
+    }
+    const skeletonCards = [];
+    for (let i = 0; i < count; i++) {
+      skeletonCards.push(
+        <Card
+              sx={{
+                maxWidth: "100%",
+                display: "flex",
+                position: "relative",
+                flexDirection: "row",
+                justifyContent: "space-between",
+                variant: "outlined",
+                borderRadius: "10px",
+                border: "2px solid #DEDEDE",
+                boxShadow: "none",
+                marginTop: "0.8rem",
+              }}
+              key={i}
+              className="Card"
+            >
+              <CardContent sx={{width:"100%"}}>
+                <Typography level="h5" fontSize="md">
+                  <Skeleton animation="pulse" sx={{ width: "25%" }} />
+                </Typography>
+                <Typography level="body2" sx={{ mt: 0.5 }}>
+                  <Skeleton animation="pulse" sx={{ width: "40%" }} />
+                </Typography>
+                <Typography level="h2" fontSize="md">
+                  <Skeleton animation="pulse" sx={{ width: "17%" }} />
+                </Typography>
+                <Typography level="body2" sx={{ mt: 0.5 }}>
+                  <Skeleton animation="pulse" sx={{ width: "14%" }} />
+                </Typography>
+              </CardContent>
+              <CardActions sx={{ float: "right" }}>
+                <Button>
+                  <Skeleton
+                    animation="pulse"
+                    variant="circular"
+                    width={36}
+                    height={36}
+                    sx={{ mt: 1 }}
+                  />
+                </Button>
+              </CardActions>
+            </Card>
+      );
+    }
+    return skeletonCards;
+  };
+  const numberOfSkeletonCards = 6;
 
   useEffect(() => {
     return () => {
@@ -297,18 +362,11 @@ const TeacherNewData = () => {
     };
   }, []);
 
-  //filter on basis of time
-  // const old = reversed.filter((element) => element.date > currentDate - 50);
-  // useEffect(() => {
-  //   return () => {
-  //     console.log(old, "old");
-  //   };
-  // }, []);
-  // useEffect(() => {
-  //   return () => {
-  //     console.log(currentDate - 10, "old");
-  //   };
-  // }, []);
+const ReloadFunc = () =>{
+  console.log("before");
+  window.location.reload()
+  console.log("after");
+}
   return (
     // <Box
     // component="main"
@@ -320,8 +378,9 @@ const TeacherNewData = () => {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        {/* <DummyNew/> */}
-        <LatestModal />
+        <div>
+        <LatestModal onReloadComponent={ReloadFunc}/>
+        </div>
       </Modal>
 
       {/* <Nav setSearch={superSearch =>setSuperSearch(superSearch)}/> */}
@@ -445,7 +504,7 @@ const TeacherNewData = () => {
 
         {/* {filterData.map((data) => ( */}
         {filterData.length == 0 ? (
-          <div>
+          <>
             Loading....
             <span
               onClick={() => filterItemLoad(MyData)}
@@ -454,12 +513,15 @@ const TeacherNewData = () => {
             >
               click here
             </span>
-          </div>
+            {generateSkeletonCards(numberOfSkeletonCards)}
+            
+          </>
         ) : (
           // filterData?.map((data) => (
           reversed?.map((data) => (
-            <>
+            
               <Card
+                key={data.id}
                 sx={{
                   maxWidth: "100%",
                   display: "flex",
@@ -482,7 +544,6 @@ const TeacherNewData = () => {
                 //   navigate(`/class/${data.id}`);
                 //   // console.log(data);
                 // }}
-                key={data.id}
               >
                 <CardContent>
                   <Box>
@@ -569,7 +630,7 @@ const TeacherNewData = () => {
                   </Button>
                 </CardActions>
               </Card>
-            </>
+            
           ))
         )}
       </Box>

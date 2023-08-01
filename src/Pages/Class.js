@@ -162,6 +162,8 @@ const Class = ({}) => {
       },
     })
       .then((response) => {
+        console.log(response,"Hello");
+
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
@@ -210,6 +212,29 @@ const Class = ({}) => {
 
     navigate("/teacher");
   };
+
+  //To check data of csv 
+  // useEffect(() => {
+  //   return () => {
+  //     const data = { lecture: lecture?.id }; 
+  //     let config = {
+  //     method: 'post',
+  //     maxBodyLength: Infinity,
+  //     url: 'https://attendanceportal.pythonanywhere.com/attendance/download-attendance/',
+  //     headers: { },
+  //     data : data
+  //   };
+
+  //   axios.request(config)
+  //   .then((response) => {
+  //     console.log(JSON.stringify(response.data));
+  //   })
+  //   .catch((error) => {
+  //     console.log(error);
+  //   });
+  //       }
+  // }, [])
+  
 
   return (
     <Box sx={{ display: "flex" }}>
