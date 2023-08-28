@@ -55,6 +55,9 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useApp } from "../context/app-context";
 
+
+import UploadOutlinedIcon from '@mui/icons-material/UploadOutlined';
+
 const style = {
   position: "absolute",
   top: "50%",
@@ -200,6 +203,21 @@ const Nav = (props) => {
             flexDirection: "column",
           }}
           onClick={() => {
+            navigate("/upload");
+          }}
+        >
+          <ListItemButton>
+            <UploadOutlinedIcon fontSize="large"/>
+          </ListItemButton>
+          <ListItemText>Upload</ListItemText>
+        </ListItem>
+
+        <ListItem
+          style={{
+            display: "flex",
+            flexDirection: "column",
+          }}
+          onClick={() => {
             navigate("/profile");
           }}
         >
@@ -210,7 +228,7 @@ const Nav = (props) => {
         </ListItem>
       </List>
       <Divider />
-      <List sx={{ mt: "2em" }}>
+      <List >
         <ListItem
           style={{
             display: "flex",

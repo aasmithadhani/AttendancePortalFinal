@@ -20,6 +20,7 @@ import { Outlet } from "react-router-dom";
 import PrivateRoute from "./PrivateRoute";
 import RangeDownload from "./Pages/RangeDownload";
 import Dashboard from "./Pages/Dashboard";
+import Upload from "./Pages/Upload";
 function App() {
   // const [superSearch,setSuperSearch] = useState({});
   // const [selectedNews, setSelectedNews] = useState({});
@@ -35,13 +36,17 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route exact path="/" element={<Login />}></Route>
-        <Route element={<PrivateRoute />} path="/teacher">
+        <Route 
+        element={<PrivateRoute />} 
+        path="/teacher">
           <Route path="/teacher" element={<TeacherNewData />}></Route>
         </Route>
         <Route element={<PrivateRoute />} path="/class/:publishedAt">
           <Route path="/class/:publishedAt" element={<Class />}></Route>
         </Route>
-        <Route element={<PrivateRoute />} path="/profile">
+        <Route 
+        element={<PrivateRoute />}
+         path="/profile">
           <Route path="/profile" element={<ProfileNew />}></Route>
         </Route>
         <Route element={<PrivateRoute />} path="/attendance">
@@ -50,6 +55,10 @@ function App() {
         <Route element={<PrivateRoute />} path="/download">
           <Route path="/download" element={<Dashboard />}></Route>
         </Route>
+        <Route 
+        element={<PrivateRoute />} path="/upload">
+          <Route path="/upload" element={<Upload />}></Route>
+        </Route>
         <Route
           exact
           path="/forgotPassword"
@@ -57,6 +66,7 @@ function App() {
         ></Route>
       </Routes>
     </BrowserRouter>
+   
   );
 }
 
